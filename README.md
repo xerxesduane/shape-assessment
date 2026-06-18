@@ -1,6 +1,18 @@
-# SHAPE Discovery
+# Fellowship Dubai S.H.A.P.E. Discovery
 
-A no-account, browser-only SHAPE assessment built with Next.js. Visitors move through Spiritual Gifts, Heart, Abilities, Personality, Experiences and Availability, then receive an instant personalised summary.
+A complete, mobile-first interactive adaptation of the 24-page S.H.A.P.E. Discovery workbook for Fellowship Dubai.
+
+The journey preserves the source order and includes:
+
+- teaching content before every assessment section
+- all 18 spiritual gifts with references, alternate names, full descriptions, and three response categories
+- all Heart roles, people groups, causes, and Other fields
+- all 30 named Abilities plus nested language, hobby, and technical lists
+- all four forced-choice Personality pairings
+- all five Experience categories, including complete nested work and ministry lists
+- Availability reflection, Next Steps, S.T.A.R.T., and Discovery Session FAQs
+- private save/resume through `localStorage`
+- a complete leader-ready profile with copy, email/share, and print/PDF actions
 
 ## Local development
 
@@ -11,22 +23,20 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Deploy to a different Vercel account
+## Deploy to another Vercel account
 
-This app has no database, API keys or environment variables.
+The app has no database, API keys, or required environment variables.
 
-1. Put this folder in a GitHub repository owned by (or shared with) the target account.
-2. Sign in to the desired Vercel account.
-3. Choose **Add New → Project**, import the repository and keep the detected Next.js defaults.
-4. Select **Deploy**.
+1. Import the GitHub repository into the target Vercel account.
+2. Keep the detected Next.js defaults.
+3. Deploy.
 
-Alternatively, from this folder run `npx vercel login`, confirm the desired account/team with `npx vercel whoami`, then run `npx vercel --prod`. Do not copy a `.vercel` folder between accounts; link the project again in the target account.
+Do not copy a `.vercel` directory between accounts. Link the repository as a new project in the intended account.
 
-## Reuse and customise
+## Main files
 
-- Assessment wording and option lists: `src/data/assessment.ts`
-- Personalised result patterns: `src/lib/results.ts`
-- Experience and flow UI: `src/components/shape-assessment.tsx`
-- Brand colours and visual styling: `src/app/globals.css`
-
-Progress is stored only in the guest's browser using `localStorage`. Nothing is uploaded.
+- Canonical structured content and types: `src/data/shapeContent.ts`
+- Journey state and step routing: `src/components/shape-assessment.tsx`
+- Profile construction and plain-text export: `src/lib/shapeProfile.ts`
+- Final leader-ready profile: `src/components/shape-profile.tsx`
+- Page-by-page fidelity audit: `docs/content-audit.md`
