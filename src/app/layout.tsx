@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SHAPE Discovery | Find Your Place to Serve",
-  description: "A private, interactive discovery of your spiritual gifts, heart, abilities, personality and experiences.",
+  title: "S.H.A.P.E. Discovery | Fellowship Dubai",
+  description: "Discover your spiritual gifts, heart, abilities, personality and experiences, then build a complete Fellowship Dubai ministry profile.",
 };
 
 export default function RootLayout({
