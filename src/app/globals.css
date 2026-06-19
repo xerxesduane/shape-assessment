@@ -63,13 +63,18 @@ h1, h2, h3, p { text-wrap: pretty; }
 .welcome-layout .teaching-card { border: 0; border-radius: 0; box-shadow: none; }
 .welcome-brand { position: relative; padding: 54px 38px; background: var(--navy); color: white; overflow: hidden; }
 .welcome-brand::before { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; left: -145px; top: -110px; }
-.fellowship-logo { width: 180px; height: 78px; position: absolute; z-index: 1; left: 38px; top: 34px; display: grid; place-items: center; padding: 7px 18px; border-radius: 14px; background: white; box-shadow: 0 12px 30px rgba(0,0,0,.16); }
-.fellowship-logo img { width: 144px !important; height: 64px !important; object-fit: contain; }
 .welcome-brand > p { margin: 340px 0 16px; color: #75d1d4; font-size: 12px; letter-spacing: .17em; font-weight: 850; }
 .welcome-brand h2 { margin: 0; font-size: clamp(29px, 4vw, 44px); line-height: 1.05; letter-spacing: -.04em; }
-.shape-orbit { position: absolute; left: 50%; top: 150px; width: 115px; height: 115px; transform: translateX(-50%); display: grid; place-items: center; border-radius: 50%; color: white; background: var(--orange); box-shadow: 0 0 0 15px rgba(236,111,69,.12); }
-.shape-orbit span { position: absolute; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: white; color: var(--navy); font-weight: 850; }
-.shape-orbit span:nth-of-type(1){top:-62px}.shape-orbit span:nth-of-type(2){right:-66px;top:13px}.shape-orbit span:nth-of-type(3){right:-37px;bottom:-56px}.shape-orbit span:nth-of-type(4){left:-37px;bottom:-56px}.shape-orbit span:nth-of-type(5){left:-66px;top:13px}
+.shape-orbit { position: absolute; left: 50%; top: 115px; width: 122px; height: 122px; transform: translateX(-50%); display: grid; place-items: center; isolation: isolate; border-radius: 50%; color: white; background: radial-gradient(circle at 34% 28%, #ff936c, var(--orange) 52%, #d95731); box-shadow: 0 0 0 15px rgba(236,111,69,.12), 0 20px 55px rgba(0,0,0,.28); animation: shape-orbit-spin 18s linear infinite; }
+.shape-orbit::before { content: ""; position: absolute; z-index: -1; inset: -40px; border: 1px dashed rgba(117,209,212,.46); border-radius: 50%; box-shadow: 0 0 32px rgba(98,201,204,.12); }
+.shape-orbit::after { content: ""; position: absolute; inset: 11px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; }
+.shape-orbit svg { filter: drop-shadow(0 5px 7px rgba(95,34,18,.28)); animation: shape-compass-pulse 2.8s ease-in-out infinite; }
+.shape-orbit span { position: absolute; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; background: rgba(255,255,255,.97); color: var(--navy); font-weight: 900; box-shadow: 0 8px 24px rgba(0,0,0,.22); animation: shape-letter-counter-spin 18s linear infinite, shape-letter-glow 2.5s ease-in-out infinite; }
+.shape-orbit span:nth-of-type(1){top:-66px;animation-delay:0s,0s}.shape-orbit span:nth-of-type(2){right:-70px;top:14px;animation-delay:0s,.25s}.shape-orbit span:nth-of-type(3){right:-39px;bottom:-59px;animation-delay:0s,.5s}.shape-orbit span:nth-of-type(4){left:-39px;bottom:-59px;animation-delay:0s,.75s}.shape-orbit span:nth-of-type(5){left:-70px;top:14px;animation-delay:0s,1s}
+@keyframes shape-orbit-spin { to { transform: translateX(-50%) rotate(360deg); } }
+@keyframes shape-letter-counter-spin { to { transform: rotate(-360deg); } }
+@keyframes shape-letter-glow { 0%,100% { background: rgba(255,255,255,.97); box-shadow: 0 8px 24px rgba(0,0,0,.22); } 50% { background: #dffbfc; box-shadow: 0 8px 30px rgba(98,201,204,.5); } }
+@keyframes shape-compass-pulse { 0%,100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.12) rotate(8deg); } }
 .profile-fields { margin: 0 clamp(28px, 6vw, 64px) 55px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; border: 1px solid var(--line); border-radius: 17px; }
 .profile-fields legend { padding: 0 7px; font-weight: 800; }
 .profile-fields > p { grid-column: 1/-1; margin: 0 0 5px; color: var(--muted); font-size: 13px; line-height: 1.5; }
