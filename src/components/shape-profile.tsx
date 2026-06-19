@@ -3,10 +3,25 @@
 import { useMemo, useState } from "react";
 import { Clipboard, ExternalLink, Mail, Printer, RotateCcw } from "lucide-react";
 import { buildProfile, profileToText, type ShapeAnswers } from "@/lib/shapeProfile";
+import { MinistryFitGuide } from "@/components/ministry-fit-guide";
+import { matchMinistries } from "@/data/ministryGiftGuide";
 
 export function ShapeProfile({ answers, onRestart }: { answers: ShapeAnswers; onRestart: () => void }) {
   const profile = useMemo(() => buildProfile(answers), [answers]);
-  const text = useMemo(() => profileToText(answers, profile), [answers, profile]);
+  const ministrySuggestions = useMemo(() => matchMinistries(profile.spiritualGifts.likely, profile.spiritualGifts.possible).filter((entry) => entry.score > 0).slice(0, 6), [profile]);
+  const text = useMemo(() => {
+    const ministryLines = ministrySuggestions.map((entry) => {
+      const gifts = [...entry.likelyMatches, ...entry.possibleMatches];
+      return `- ${entry.ministry}: ${gifts.join(", ")}`;
+    });
+    return [
+      profileToText(answers, profile),
+      "MINISTRY FIT GUIDE (DESCRIPTIVE, NOT PRESCRIPTIVE)",
+      ...(ministryLines.length ? ministryLines : ["Complete the Spiritual Gifts section to see personalized ministry connections."]),
+      "Personal conviction and the Holy Spirit’s leading are paramount. Use these suggestions as a supportive resource for prayer and conversation with a ministry leader.",
+      "Current opportunities: https://fellowshipdubai.churchcenter.com/people/forms/268058",
+    ].join("\n\n");
+  }, [answers, ministrySuggestions, profile]);
   const [copied, setCopied] = useState(false);
   const copy = async () => { await navigator.clipboard.writeText(text); setCopied(true); window.setTimeout(() => setCopied(false), 1600); };
   const mailto = `mailto:?subject=${encodeURIComponent(`${answers.profile.name || "My"} S.H.A.P.E. Profile`)}&body=${encodeURIComponent(text)}`;
@@ -35,6 +50,7 @@ export function ShapeProfile({ answers, onRestart }: { answers: ShapeAnswers; on
       <ProfileSection letter="+" title="Availability">
         <dl className="availability-summary"><div><dt>Are you making service a priority?</dt><dd>{profile.availability.priority}</dd></div><div><dt>Current season and time</dt><dd>{profile.availability.season}</dd></div><div><dt>Time per week</dt><dd>{profile.availability.hours}</dd></div><div><dt>Best times</dt><dd>{profile.availability.timing.join(", ") || "Not specified"}</dd></div></dl>
       </ProfileSection>
+      <MinistryFitGuide likely={profile.spiritualGifts.likely} possible={profile.spiritualGifts.possible} />
       <article className="recommended-step"><p className="eyebrow">Recommended next step</p><h2>Continue the conversation.</h2><p>{profile.recommendedNextStep}</p><p className="purpose-line">Know Jesus · Grow to be like Jesus · Go tell the nations about Jesus</p></article>
       <div className="profile-footer no-print"><button className="back-button" onClick={onRestart}><RotateCcw size={17} />Start a new profile</button></div>
     </section>
