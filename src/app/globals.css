@@ -32,8 +32,8 @@ a { color: inherit; }
 .ambient-two { width: 300px; height: 300px; background: rgba(236,111,69,.05); right: -180px; bottom: 3%; }
 .progress-header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgba(18,38,63,.09); background: rgba(245,241,232,.94); backdrop-filter: blur(14px); }
 .journey-progress { width: min(1060px, calc(100% - 32px)); min-height: 82px; display: flex; align-items: center; gap: 17px; margin: auto; }
-.fd-mark { width: 45px; height: 45px; flex: 0 0 auto; border: 0; border-radius: 13px; display: grid; grid-template-columns: 1fr 1fr; place-items: center; padding: 8px; background: var(--navy); color: white; font-weight: 850; }
-.fd-mark span:last-child { color: #58c4c8; }
+.fd-mark { width: 52px; height: 45px; flex: 0 0 auto; border: 1px solid rgba(18,38,63,.1); border-radius: 11px; display: grid; place-items: center; padding: 4px 7px; overflow: hidden; background: white; }
+.fd-mark img { width: 36px !important; height: 35px !important; object-fit: contain; }
 .progress-copy { flex: 1; min-width: 0; }
 .progress-label { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .progress-track { height: 5px; overflow: hidden; border-radius: 99px; background: rgba(18,38,63,.1); }
@@ -63,6 +63,8 @@ h1, h2, h3, p { text-wrap: pretty; }
 .welcome-layout .teaching-card { border: 0; border-radius: 0; box-shadow: none; }
 .welcome-brand { position: relative; padding: 54px 38px; background: var(--navy); color: white; overflow: hidden; }
 .welcome-brand::before { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; left: -145px; top: -110px; }
+.fellowship-logo { width: 180px; height: 78px; position: absolute; z-index: 1; left: 38px; top: 34px; display: grid; place-items: center; padding: 7px 18px; border-radius: 14px; background: white; box-shadow: 0 12px 30px rgba(0,0,0,.16); }
+.fellowship-logo img { width: 144px !important; height: 64px !important; object-fit: contain; }
 .welcome-brand > p { margin: 340px 0 16px; color: #75d1d4; font-size: 12px; letter-spacing: .17em; font-weight: 850; }
 .welcome-brand h2 { margin: 0; font-size: clamp(29px, 4vw, 44px); line-height: 1.05; letter-spacing: -.04em; }
 .shape-orbit { position: absolute; left: 50%; top: 150px; width: 115px; height: 115px; transform: translateX(-50%); display: grid; place-items: center; border-radius: 50%; color: white; background: var(--orange); box-shadow: 0 0 0 15px rgba(236,111,69,.12); }

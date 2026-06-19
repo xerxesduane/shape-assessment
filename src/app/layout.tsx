@@ -12,19 +12,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://shape-fellowship-dubai.vercel.app";
+const siteDescription = "Discover your Spiritual Gifts, Heart, Abilities, Personality, and Experiences, then build a private ministry profile for serving at Fellowship Dubai.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Fellowship Dubai S.H.A.P.E. Discovery",
+  url: siteUrl,
+  description: siteDescription,
+  applicationCategory: "LifestyleApplication",
+  publisher: {
+    "@type": "Organization",
+    name: "Fellowship Dubai",
+    url: "https://fellowshipdubai.com/",
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/fellowship-logo.jpeg`,
+    },
+  },
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shape-fellowship-dubai.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "S.H.A.P.E. Discovery | Fellowship Dubai",
     template: "%s | Fellowship Dubai",
   },
-  description: "Discover your Spiritual Gifts, Heart, Abilities, Personality, and Experiences, then build a private ministry profile for serving at Fellowship Dubai.",
+  description: siteDescription,
   applicationName: "Fellowship Dubai S.H.A.P.E. Discovery",
   keywords: ["Fellowship Dubai", "SHAPE assessment", "spiritual gifts", "church ministry", "serving", "Dubai church"],
   authors: [{ name: "Fellowship Dubai", url: "https://fellowshipdubai.com/" }],
   creator: "Fellowship Dubai",
   publisher: "Fellowship Dubai",
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_AE",
@@ -57,7 +86,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

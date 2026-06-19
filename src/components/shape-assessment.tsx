@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, Compass, LockKeyhole, RotateCcw } from "lucide-react";
 import {
   abilities, abilitiesSection, availabilitySection, discoveryFaqs, experienceQuestions, experiencesSection,
@@ -57,7 +58,7 @@ export function ShapeAssessment() {
     <main className="app-shell">
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
       {current.id !== "profile" && <header className="progress-header no-print"><div className="journey-progress">
-        <button className="fd-mark" onClick={() => setStep(0)} aria-label="Return to welcome"><span>F</span><span>D</span></button>
+        <button className="fd-mark" onClick={() => setStep(0)} aria-label="Return to welcome"><Image src="/fellowship-logo.jpeg" alt="" width={284} height={221} priority /></button>
         <div className="progress-copy"><div className="progress-label"><span>{current.title}</span><span>{progress}%</span></div><div className="progress-track"><div className="progress-fill" style={{ width: `${progress}%` }} /></div><small>Source {current.pages.length ? `page${current.pages.length > 1 ? "s" : ""} ${current.pages.join(", ")}` : "profile"} · Step {step + 1} of {journeySteps.length}</small></div>
         <span className="purpose-mini">KNOW · GROW · GO</span>
       </div></header>}
@@ -95,7 +96,7 @@ export function ShapeAssessment() {
 }
 
 function Welcome({ answers, setAnswers }: { answers: ShapeAnswers; setAnswers: React.Dispatch<React.SetStateAction<ShapeAnswers>> }) {
-  return <div className="welcome-layout"><div className="welcome-brand"><div className="shape-orbit"><Compass size={42} /><span>S</span><span>H</span><span>A</span><span>P</span><span>E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus.<br />Grow to be like Jesus.<br />Go tell the nations.</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details make the final profile easier to share with a Fellowship Dubai ministry leader.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
+  return <div className="welcome-layout"><div className="welcome-brand"><div className="fellowship-logo"><Image src="/fellowship-logo.jpeg" alt="Fellowship" width={284} height={221} priority /></div><div className="shape-orbit"><Compass size={42} /><span>S</span><span>H</span><span>A</span><span>P</span><span>E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus.<br />Grow to be like Jesus.<br />Go tell the nations.</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details make the final profile easier to share with a Fellowship Dubai ministry leader.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
 }
 
 function Contents() {
@@ -116,7 +117,7 @@ function StartWays() {
 }
 
 function NextStep() {
-  return <div className="field-stack"><TeachingCard section={nextStepSection} /><article className="next-step-ways"><p className="eyebrow">Five ways to start serving</p><div>{nextStepWays.map((item, index) => <section key={item.title}><span>{index + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div></section>)}</div><a href="https://fellowshipdubai.com/" target="_blank" rel="noreferrer">Explore Serving at Fellowship Dubai</a></article></div>;
+  return <div className="field-stack"><TeachingCard section={nextStepSection} /><article className="next-step-ways"><p className="eyebrow">Five ways to start serving</p><div>{nextStepWays.map((item, index) => <section key={item.title}><span>{index + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div></section>)}</div><a href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">Begin Serving at Fellowship Dubai</a></article></div>;
 }
 
 function Faq() {

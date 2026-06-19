@@ -18,7 +18,7 @@ export function ShapeProfile({ answers, onRestart }: { answers: ShapeAnswers; on
         <h1>{answers.profile.name ? `${answers.profile.name}’s` : "My"} S.H.A.P.E. Profile</h1>
         <p>A clear starting point for prayer, reflection, and a conversation with a ministry leader or Serve Team member.</p>
         <div className="profile-contact"><span>{answers.profile.email || "Email not provided"}</span><span>{answers.profile.phone || "Phone not provided"}</span></div>
-        <div className="profile-actions no-print"><button onClick={copy}><Clipboard size={17} />{copied ? "Copied" : "Copy My Profile"}</button><button onClick={() => window.print()}><Printer size={17} />Download / Print PDF</button><a href={mailto}><Mail size={17} />Email / Share My Profile</a><a href="https://fellowshipdubai.com/" target="_blank" rel="noreferrer">Explore Serving <ExternalLink size={16} /></a></div>
+        <div className="profile-actions no-print"><button onClick={copy}><Clipboard size={17} />{copied ? "Copied" : "Copy My Profile"}</button><button onClick={() => window.print()}><Printer size={17} />Download / Print PDF</button><a href={mailto}><Mail size={17} />Email / Share My Profile</a><a href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">Begin Serving <ExternalLink size={16} /></a></div>
       </header>
 
       <ProfileSection letter="S" title="Spiritual Gifts">
