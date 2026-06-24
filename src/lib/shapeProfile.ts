@@ -59,8 +59,8 @@ export function buildProfile(answers: ShapeAnswers): ProfileSummary {
   const hours = optionLabels([{ id: "1-2-hours", label: "1-2 hours" }, { id: "3-5-hours", label: "3-5 hours" }, { id: "6-hours", label: "6+ hours" }], answers.selections.hours || [])[0] || "Not specified";
   const timing = optionLabels([{ id: "weekday", label: "Weekday" }, { id: "weeknight", label: "Weeknight" }, { id: "weekend", label: "Weekend" }], answers.selections.timing || []);
   const recommendation = giftGroups.likely.length
-    ? `Share this profile with the Fellowship Dubai Serve Team and explore a role where your ${giftGroups.likely.slice(0, 3).join(", ")} gifts can be tested and developed.`
-    : "Share this profile with the Fellowship Dubai Serve Team and try one or two short-term serving opportunities to help your gifts become clearer.";
+    ? `Explore current serving opportunities where your ${giftGroups.likely.slice(0, 3).join(", ")} gifts can be tested and developed.`
+    : "Explore one or two current serving opportunities and notice where your gifts become clearer through experience.";
 
   return {
     spiritualGifts: giftGroups,

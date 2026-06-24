@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, Compass, LockKeyhole, RotateCcw } from "lucide-react";
 import {
-  abilities, abilitiesSection, availabilitySection, discoveryFaqs, experienceQuestions, experiencesSection,
+  abilities, abilitiesSection, availabilitySection, experienceQuestions, experiencesSection,
   heartQuestions, heartSection, journeySteps, nextStepSection, nextStepWays, personalitySection, startWays,
   spiritualGiftsSection, tableOfContents, welcomeSection, whatIsShapeSection, workExperiences,
 } from "@/data/shapeContent";
@@ -84,7 +84,6 @@ export function ShapeAssessment() {
           {current.id === "availability" && <Availability answers={answers} updateText={updateText} selected={selected} updateSelections={updateSelections} />}
           {current.id === "next-step" && <NextStep />}
           {current.id === "start" && <StartWays />}
-          {current.id === "faq" && <Faq />}
           {current.id === "profile" && <ShapeProfile answers={answers} onRestart={restart} />}
         </section>
 
@@ -96,7 +95,7 @@ export function ShapeAssessment() {
 }
 
 function Welcome({ answers, setAnswers }: { answers: ShapeAnswers; setAnswers: React.Dispatch<React.SetStateAction<ShapeAnswers>> }) {
-  return <div className="welcome-layout"><div className="welcome-brand"><div className="shape-orbit" role="img" aria-label="S.H.A.P.E.: Spiritual Gifts, Heart, Abilities, Personality, and Experiences"><Compass size={42} aria-hidden="true" /><span aria-hidden="true">S</span><span aria-hidden="true">H</span><span aria-hidden="true">A</span><span aria-hidden="true">P</span><span aria-hidden="true">E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus.<br />Grow to be like Jesus.<br />Go tell the nations.</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details make the final profile easier to share with a Fellowship Dubai ministry leader.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
+  return <div className="welcome-layout"><div className="welcome-brand"><div className="shape-orbit" role="img" aria-label="S.H.A.P.E.: Spiritual Gifts, Heart, Abilities, Personality, and Experiences"><Compass size={42} aria-hidden="true" /><span aria-hidden="true">S</span><span aria-hidden="true">H</span><span aria-hidden="true">A</span><span aria-hidden="true">P</span><span aria-hidden="true">E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus.<br />Grow to be like Jesus.<br />Go tell the nations.</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details will appear on your completed profile if you choose to download or share it.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
 }
 
 function Contents() {
@@ -117,9 +116,5 @@ function StartWays() {
 }
 
 function NextStep() {
-  return <div className="field-stack"><TeachingCard section={nextStepSection} /><article className="next-step-ways"><p className="eyebrow">Five ways to start serving</p><div>{nextStepWays.map((item, index) => <section key={item.title}><span>{index + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div></section>)}</div><a href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">Begin Serving at Fellowship Dubai</a></article></div>;
-}
-
-function Faq() {
-  return <article className="faq-card"><p className="eyebrow">Source page 24 · What to expect</p><h1>S.H.A.P.E. Discovery Session FAQs</h1><p>The source’s discovery-session structure has been contextualized for Fellowship Dubai; local meeting details can be confirmed by the Serve Team.</p><div>{discoveryFaqs.map((faq) => <details key={faq.question} open={faq.question === "What?"}><summary>{faq.question}</summary><p>{faq.answer}</p>{faq.bullets && <ul>{faq.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}</details>)}</div></article>;
+  return <div className="field-stack"><TeachingCard section={nextStepSection} /><article className="next-step-ways"><p className="eyebrow">Your next step</p><div>{nextStepWays.map((item, index) => <section key={item.title}><span>{index + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div></section>)}</div><a href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">View Serving Opportunities</a></article></div>;
 }

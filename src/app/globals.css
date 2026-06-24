@@ -47,7 +47,7 @@ a { color: inherit; }
 h1, h2, h3, p { text-wrap: pretty; }
 .teaching-card { padding: clamp(28px, 6vw, 64px); }
 .teaching-header { display: flex; align-items: center; gap: 18px; padding-bottom: 27px; border-bottom: 1px solid var(--line); }
-.teaching-header h1, .assessment-heading h1, .contents-card h1, .start-card > h1, .faq-card h1 { margin: 0; font-size: clamp(36px, 6vw, 58px); line-height: 1; letter-spacing: -.05em; }
+.teaching-header h1, .assessment-heading h1, .contents-card h1, .start-card > h1 { margin: 0; font-size: clamp(36px, 6vw, 58px); line-height: 1; letter-spacing: -.05em; }
 .teaching-header > div > p:last-child { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
 .section-letter { width: 62px; height: 62px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 18px; background: var(--teal); color: white; font-size: 28px; font-weight: 850; }
 .teaching-card blockquote { margin: 29px 0; padding: 22px; display: flex; gap: 15px; border: 0; border-radius: 16px; background: var(--teal-soft); color: var(--navy); }
@@ -82,8 +82,8 @@ h1, h2, h3, p { text-wrap: pretty; }
 .profile-fields label, .other-field, .reflection-fields label { display: grid; gap: 7px; font-size: 12px; font-weight: 750; }
 input, textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: white; color: var(--ink); font-size: 16px; }
 textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
-.contents-card, .start-card, .faq-card { padding: clamp(28px, 6vw, 64px); }
-.contents-card > p:not(.eyebrow), .faq-card > p:not(.eyebrow) { color: var(--muted); line-height: 1.6; }
+.contents-card, .start-card { padding: clamp(28px, 6vw, 64px); }
+.contents-card > p:not(.eyebrow) { color: var(--muted); line-height: 1.6; }
 .contents-card ol { margin: 31px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 25px; }
 .contents-card li { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 13px; border-bottom: 1px solid var(--line); }
 .contents-card li span { font-weight: 670; }
@@ -149,12 +149,6 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
 .start-card h2 { margin: 1px 0 7px; }
 .start-card section p, .start-card li { color: var(--muted); line-height: 1.55; }
 .start-card > a { display: inline-flex; margin-top: 25px; color: var(--orange-dark); font-weight: 750; }
-.faq-card > div { display: grid; gap: 10px; margin-top: 28px; }
-.faq-card details { border: 1px solid var(--line); border-radius: 13px; background: white; overflow: hidden; }
-.faq-card summary { padding: 18px; font-weight: 800; }
-.faq-card details p { margin: 0; padding: 0 18px 18px; color: var(--muted); line-height: 1.6; }
-.faq-card details ul { margin: -5px 18px 18px; padding-left: 20px; color: var(--muted); line-height: 1.55; }
-.faq-card details li { margin-bottom: 7px; }
 .next-step-ways { padding: clamp(28px, 6vw, 58px); }
 .next-step-ways > div { display: grid; gap: 11px; }
 .next-step-ways section { display: grid; grid-template-columns: 38px 1fr; gap: 13px; padding: 17px; border-radius: 14px; background: #f8f6f0; }
@@ -198,41 +192,12 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
 .availability-summary div { padding: 16px; border-radius: 13px; background: #f8f6f0; }
 .availability-summary dt { margin-bottom: 7px; color: var(--muted); font-size: 11px; font-weight: 750; text-transform: uppercase; }
 .availability-summary dd { margin: 0; line-height: 1.5; }
-.ministry-guide { padding: clamp(28px, 6vw, 58px); border: 1px solid rgba(18,38,63,.08); background: var(--paper); }
-.ministry-guide-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
-.ministry-guide-header h2 { max-width: 680px; margin: 0; font-size: clamp(32px, 5vw, 48px); line-height: 1.02; letter-spacing: -.045em; }
-.ministry-guide-header > div > p:last-child { max-width: 700px; margin: 14px 0 0; color: var(--muted); line-height: 1.6; }
-.ministry-guide-header > svg { flex: 0 0 auto; box-sizing: content-box; padding: 15px; border-radius: 18px; background: var(--teal-soft); color: var(--teal); }
-.discernment-note { display: flex; gap: 14px; margin-top: 28px; padding: 20px; border: 1px solid rgba(22,125,131,.2); border-radius: 16px; background: linear-gradient(135deg, var(--teal-soft), #f4fbfa); }
-.discernment-note > svg { flex: 0 0 auto; margin-top: 2px; color: var(--teal); }
-.discernment-note strong { color: var(--navy); }
-.discernment-note p { margin: 6px 0 0; color: #496476; font-size: 14px; line-height: 1.6; }
-.ministry-suggestions { margin-top: 35px; }
-.ministry-suggestions-heading h3 { margin: 0; font-size: 26px; letter-spacing: -.03em; }
-.ministry-match-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 18px; }
-.ministry-match-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-.ministry-match-card h4 { margin: 8px 0 17px; color: var(--navy); font-size: 20px; letter-spacing: -.025em; }
-.ministry-match-score { display: inline-flex; padding: 5px 8px; border-radius: 999px; background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-.ministry-gift-matches + .ministry-gift-matches { margin-top: 12px; }
-.ministry-gift-matches > span { color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.ministry-gift-matches p { margin: 4px 0 0; color: #3f5568; font-size: 13px; line-height: 1.45; }
-.ministry-gift-matches.possible { opacity: .72; }
-.ministry-no-matches { margin: 30px 0 0; padding: 18px; border-radius: 14px; background: #f8f6f0; color: var(--muted); line-height: 1.55; }
-.ministry-guide-table { margin-top: 26px; border: 1px solid var(--line); border-radius: 15px; overflow: hidden; background: white; }
-.ministry-guide-table summary { padding: 18px 20px; color: var(--navy); font-weight: 800; }
-.ministry-guide-table[open] summary { border-bottom: 1px solid var(--line); }
-.ministry-table-scroll { overflow-x: auto; }
-.ministry-guide-table table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.ministry-guide-table th, .ministry-guide-table td { padding: 13px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.45; }
-.ministry-guide-table thead th { background: var(--navy); color: white; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; }
-.ministry-guide-table tbody th { width: 28%; color: var(--navy); }
-.ministry-guide-table tbody tr:last-child > * { border-bottom: 0; }
-.ministry-guide-cta { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 24px; padding: 0 20px; border-radius: 999px; background: var(--teal); color: white; font-weight: 780; text-decoration: none; }
-.ministry-guide-cta:hover { background: #106c71; }
 .recommended-step { padding: clamp(28px, 6vw, 58px); background: var(--orange); color: white; }
 .recommended-step .eyebrow { color: white; opacity: .75; }
 .recommended-step h2 { margin: 0 0 10px; font-size: 38px; letter-spacing: -.04em; }
 .recommended-step > p:not(.eyebrow) { max-width: 760px; line-height: 1.65; }
+.recommended-step-link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; padding: 0 19px; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; background: rgba(255,255,255,.13); color: white; font-weight: 780; text-decoration: none; }
+.recommended-step-link:hover { background: rgba(255,255,255,.22); }
 .purpose-line { margin-top: 24px; font-weight: 800; letter-spacing: .04em; }
 .profile-footer { box-shadow: none; display: flex; justify-content: center; padding: 5px; }
 .animate-in { animation: enter .35s ease both; }
@@ -248,9 +213,9 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
   .welcome-brand { min-height: 465px; }
   .welcome-brand > p { margin-top: 315px; }
   .teaching-header { align-items: flex-start; }
-  .teaching-header h1, .assessment-heading h1, .contents-card h1, .start-card > h1, .faq-card h1 { font-size: 38px; }
+  .teaching-header h1, .assessment-heading h1, .contents-card h1, .start-card > h1 { font-size: 38px; }
   .section-letter { width: 49px; height: 49px; border-radius: 14px; font-size: 22px; }
-  .profile-fields, .contents-card ol, .option-grid, .nested-grid, .gift-full-row legend, .gift-response-grid, .personality-pair, .other-input-grid, .reflection-fields, .single-field > div, .profile-experience-grid, .availability-summary, .ministry-match-grid { grid-template-columns: 1fr; }
+  .profile-fields, .contents-card ol, .option-grid, .nested-grid, .gift-full-row legend, .gift-response-grid, .personality-pair, .other-input-grid, .reflection-fields, .single-field > div, .profile-experience-grid, .availability-summary { grid-template-columns: 1fr; }
   .profile-fields label:first-of-type { grid-column: auto; }
   .gift-response-grid button { min-height: 51px; }
   .personality-pair button { min-height: 112px; }
@@ -264,10 +229,6 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
   .profile-actions { display: grid; }
   .profile-section > header { padding: 18px; }
   .profile-section-body { padding: 20px; }
-  .ministry-guide { padding: 28px 20px; }
-  .ministry-guide-header > svg { display: none; }
-  .ministry-guide-table table { min-width: 680px; }
-  .ministry-guide-cta { width: 100%; padding: 0 14px; }
   .recommended-step h2 { font-size: 31px; }
 }
 

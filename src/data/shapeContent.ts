@@ -44,7 +44,7 @@ export const tableOfContents = [
   ["Heart", "8"], ["Monitoring My Heartbeat", "9-10"], ["Abilities", "11"],
   ["Applying My Abilities", "12-13"], ["Personality", "14"], ["Plugging In My Personality", "15"],
   ["Experiences", "16"], ["Examining My Experiences", "17-20"], ["Determining My Availability", "21"],
-  ["My Next Step", "22"], ["5 Ways to S.T.A.R.T. to Deepen Your S.H.A.P.E.", "23"], ["S.H.A.P.E. Discovery Session FAQs", "24"],
+  ["How to Start Serving", "22"], ["5 Ways to S.T.A.R.T. to Deepen Your S.H.A.P.E.", "23"],
 ] as const;
 
 export const welcomeSection: Section = {
@@ -52,7 +52,7 @@ export const welcomeSection: Section = {
   paragraphs: [
     "We are excited that you have taken the time to discover more about how God has SHAPED you for ministry. We desire that you find a place of service at Fellowship Dubai that fits the unique way God has created and designed you. Your SHAPE - Spiritual Gifts, Heart, Abilities, Personality, and Experience - influences your ministry, and our prayer is that through this journey you will discover more about how you were SHAPED for serving God.",
     "God did not design church ministry for a select few with seminary degrees. Every member of the church is a minister. This guided discovery is designed to help you understand your S.H.A.P.E. and how God may use you in ministry at Fellowship Dubai.",
-    "At the end, you will be encouraged to share your S.H.A.P.E. Profile with a Fellowship Dubai ministry leader or Serve Team member. They can help connect your gifts, passions, abilities, personality, and life experiences with a place to serve the Lord and His people.",
+    "At the end, you can download or share your S.H.A.P.E. Profile and use it as you prayerfully explore current opportunities to serve the Lord and His people.",
     "As you begin, pray and expect God to grant you wisdom, discernment, and understanding. Remember that there are no wrong answers because this is your unique S.H.A.P.E. We are thrilled to help you find a fulfilling place to serve where you can use your gifts.",
     "Blessings, The Fellowship Dubai Ministry Team",
   ],
@@ -268,28 +268,15 @@ export const startWays = [
 ];
 
 export const nextStepSection: Section = {
-  id: "next-step", title: "My Next Step", shortTitle: "Next Step", page: 22, eyebrow: "Congratulations - you have completed the first step in the SHAPE discovery process.",
+  id: "next-step", title: "How to Start Serving", shortTitle: "Start Serving", page: 22, eyebrow: "Congratulations - you have completed the first step in the SHAPE discovery process.",
   scripture: { text: "Each one should use whatever gift he has received to serve others, faithfully administering God’s grace in its various forms.", reference: "1 Peter 4:10" },
   paragraphs: [
     "Thank you for taking the time to begin to discover how you were SHAPED for serving God. Hopefully God has revealed, clarified, or affirmed something about your SHAPE. You are a gift, and God has amazing things in store for you in ministry.",
-    "Download or print your completed S.H.A.P.E. Profile and share it with a Fellowship Dubai ministry leader or Serve Team member. A conversation can help connect your profile with service opportunities where God can use you to make a lasting impact.",
   ],
 };
 
 export const nextStepWays = [
-  { title: "Serving Opportunity Finder", text: "Find an opportunity that fits your talents and time. Explore current serving pathways at Fellowship Dubai and use your completed profile to guide the conversation." },
-  { title: "Ministry Guide", text: "Take time to explore the many ways to serve within the church family. A Fellowship Dubai ministry leader or Serve Team member can help you understand the opportunities and where your SHAPE may fit." },
-  { title: "Current Ministry Needs", text: "Ask what the church’s immediate serving needs are. A timely need can be a practical place to test and develop your gifts." },
-  { title: "Ministry in a Box", text: "Consider a project you can complete from home, with your small group, or with your family - such as preparation, administration, data entry, calls, research, or practical project support." },
-  { title: "Serving Fellowship Dubai Today", text: "Offer your administrative, organizational, management, creative, caring, technical, or practical talents to help Fellowship Dubai teams with current projects." },
-];
-
-export const discoveryFaqs: { question: string; answer: string; bullets?: string[] }[] = [
-  { question: "Where?", answer: "Your Fellowship Dubai Serve Team or ministry leader will confirm the best place to meet or connect." },
-  { question: "When?", answer: "Discovery conversations can be arranged with the Fellowship Dubai team at a mutually suitable time." },
-  { question: "Who?", answer: "A ministry leader or S.H.A.P.E. guide will prayerfully help you explore service opportunities at Fellowship Dubai. The conversation should be welcoming, confidential, and guided by the Holy Spirit." },
-  { question: "What?", answer: "During a S.H.A.P.E. discovery conversation, your guide will:", bullets: ["Welcome you and help you feel at ease.", "Open your time in prayer, asking the Holy Spirit to guide the conversation.", "Treat what you share confidentially.", "Review your S.H.A.P.E. Profile, starting with your experiences and ending with your spiritual gifts.", "Talk about other responsibilities in your life and whether this is the right time to serve.", "Help you consider whether you are ready to serve, need time to heal spiritually or emotionally, are already serving, or want to begin something new.", "Provide two or three service opportunities that fit your S.H.A.P.E., where possible and appropriate.", "Encourage you to contact the selected ministry team and take a practical next step.", "Answer your questions.", "Close your time in prayer."] },
-  { question: "How long?", answer: "Allow about one hour for an unhurried conversation about your S.H.A.P.E. and possible service opportunities." },
+  { title: "Explore Serving Opportunities", text: "Use the Serving Opportunities form to view current roles and find an opportunity that fits your gifts, talents, and availability." },
 ];
 
 export const journeySteps = [
@@ -300,6 +287,6 @@ export const journeySteps = [
   { id: "personality-teaching", title: "Personality", pages: [14] }, { id: "personality-assessment", title: "Plugging In My Personality", pages: [15] },
   { id: "experiences-teaching", title: "Experiences", pages: [16] }, { id: "experiences-personal", title: "Personal Experiences", pages: [17] },
   { id: "experiences-work", title: "Work Experiences", pages: [17,18,19] }, { id: "experiences-ministry", title: "Ministry Experiences", pages: [19,20] },
-  { id: "availability", title: "Availability", pages: [21] }, { id: "next-step", title: "My Next Step", pages: [22] }, { id: "start", title: "S.T.A.R.T.", pages: [23] },
-  { id: "faq", title: "Discovery Session FAQs", pages: [24] }, { id: "profile", title: "My SHAPE Profile", pages: [] },
+  { id: "availability", title: "Availability", pages: [21] }, { id: "next-step", title: "How to Start Serving", pages: [22] }, { id: "start", title: "S.T.A.R.T.", pages: [23] },
+  { id: "profile", title: "My SHAPE Profile", pages: [] },
 ] as const;
