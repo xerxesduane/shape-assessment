@@ -149,13 +149,6 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
 .start-card h2 { margin: 1px 0 7px; }
 .start-card section p, .start-card li { color: var(--muted); line-height: 1.55; }
 .start-card > a { display: inline-flex; margin-top: 25px; color: var(--orange-dark); font-weight: 750; }
-.next-step-ways { padding: clamp(28px, 6vw, 58px); }
-.next-step-ways > div { display: grid; gap: 11px; }
-.next-step-ways section { display: grid; grid-template-columns: 38px 1fr; gap: 13px; padding: 17px; border-radius: 14px; background: #f8f6f0; }
-.next-step-ways section > span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--orange); color: white; font-weight: 800; }
-.next-step-ways h2 { margin: 0 0 6px; font-size: 19px; }
-.next-step-ways section p { margin: 0; color: var(--muted); line-height: 1.55; }
-.next-step-ways > a { display: inline-flex; margin-top: 23px; color: var(--orange-dark); font-weight: 760; }
 .journey-actions { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin-top: 24px; }
 .journey-actions > div { display: flex; align-items: center; gap: 13px; }
 .primary-button, .back-button, .profile-actions button, .profile-actions a { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 21px; border-radius: 999px; font-weight: 760; text-decoration: none; }
@@ -192,13 +185,23 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
 .availability-summary div { padding: 16px; border-radius: 13px; background: #f8f6f0; }
 .availability-summary dt { margin-bottom: 7px; color: var(--muted); font-size: 11px; font-weight: 750; text-transform: uppercase; }
 .availability-summary dd { margin: 0; line-height: 1.5; }
-.recommended-step { padding: clamp(28px, 6vw, 58px); background: var(--orange); color: white; }
-.recommended-step .eyebrow { color: white; opacity: .75; }
-.recommended-step h2 { margin: 0 0 10px; font-size: 38px; letter-spacing: -.04em; }
-.recommended-step > p:not(.eyebrow) { max-width: 760px; line-height: 1.65; }
-.recommended-step-link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; padding: 0 19px; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; background: rgba(255,255,255,.13); color: white; font-weight: 780; text-decoration: none; }
-.recommended-step-link:hover { background: rgba(255,255,255,.22); }
-.purpose-line { margin-top: 24px; font-weight: 800; letter-spacing: .04em; }
+.ministry-table-section { overflow: hidden; border: 1px solid rgba(18,38,63,.08); background: var(--paper); }
+.ministry-table-heading { display: grid; grid-template-columns: auto 1fr; gap: 18px; padding: clamp(28px, 6vw, 54px); border-bottom: 1px solid var(--line); }
+.ministry-table-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; background: var(--teal); color: white; }
+.ministry-table-heading h2 { max-width: 700px; margin: 0; font-size: clamp(31px, 5vw, 46px); line-height: 1.04; letter-spacing: -.045em; }
+.ministry-table-heading > div:last-child > p:last-child { max-width: 790px; margin: 14px 0 0; color: var(--muted); line-height: 1.65; }
+.ministry-table-desktop { padding: 0 clamp(24px, 5vw, 52px) 34px; }
+.ministry-table-desktop table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: 15px; overflow: hidden; font-size: 13px; }
+.ministry-table-desktop th, .ministry-table-desktop td { padding: 13px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.48; }
+.ministry-table-desktop thead th { background: var(--navy); color: white; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.ministry-table-desktop tbody th { width: 29%; color: var(--navy); background: #f8f6f0; }
+.ministry-table-desktop tbody tr:last-child > * { border-bottom: 0; }
+.ministry-table-mobile { display: none; }
+.ministry-table-action { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px clamp(24px, 5vw, 52px); background: var(--navy); color: white; }
+.ministry-table-action strong { font-size: 18px; }
+.ministry-table-action p { margin: 5px 0 0; color: rgba(255,255,255,.68); font-size: 13px; line-height: 1.5; }
+.ministry-table-action a { min-height: 48px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 18px; border-radius: 999px; background: var(--orange); color: white; font-weight: 780; text-decoration: none; }
+.ministry-table-action a:hover { background: var(--orange-dark); }
 .profile-footer { box-shadow: none; display: flex; justify-content: center; padding: 5px; }
 .animate-in { animation: enter .35s ease both; }
 @keyframes enter { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
@@ -229,7 +232,15 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
   .profile-actions { display: grid; }
   .profile-section > header { padding: 18px; }
   .profile-section-body { padding: 20px; }
-  .recommended-step h2 { font-size: 31px; }
+  .ministry-table-heading { grid-template-columns: 1fr; padding: 28px 20px; }
+  .ministry-table-icon { width: 48px; height: 48px; }
+  .ministry-table-desktop { display: none; }
+  .ministry-table-mobile { display: grid; gap: 10px; padding: 20px; }
+  .ministry-table-mobile section { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #f8f6f0; }
+  .ministry-table-mobile h3 { margin: 0 0 7px; color: var(--navy); font-size: 17px; }
+  .ministry-table-mobile p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+  .ministry-table-action { align-items: stretch; flex-direction: column; padding: 24px 20px; }
+  .ministry-table-action a { width: 100%; }
 }
 
 @media print {
@@ -243,5 +254,4 @@ textarea { min-height: 105px; resize: vertical; line-height: 1.5; }
   .profile-hero h1 { font-size: 38px; }
   .profile-section > header { padding: 12px 18px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .profile-section-body { padding: 15px 18px; gap: 14px; }
-  .recommended-step { padding: 24px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }

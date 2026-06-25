@@ -50,13 +50,13 @@ The rebuild must make every row complete, preserve all assessment options and Ot
 | 17-19 | Work Experiences | Complete | All 18 categories, complete nested subcategories, search, category-specific Other fields |
 | 19-20 | Ministry Experiences | Complete | 13 age/life-stage options, 40 ministry roles/functions, 1-3 selection guidance, both Other fields |
 | 21 | Determining My Availability | Complete | Teaching, both reflection questions, exact hour and timing options, John 12:26 |
-| 22 | My Next Step | Temporarily adapted | Published as a focused "How to Start Serving" step with the current Serving Opportunities form |
+| 22 | My Next Step | Adapted after profile | A Ministry–Gift Table follows the completed profile and leads to the current Serving Opportunities form |
 | 23 | Five ways to S.T.A.R.T. | Complete | Study titles, Trial and error, Analyze, Request input, Take training |
 | 24 | Discovery Session FAQs | Deferred | Intentionally unpublished until the SERVE coach team, registration workflow, and dashboard are ready |
 
 ## Functional QA
 
-- The current launch flow contains 20 guided stages; source page 24 is intentionally deferred.
+- The current launch flow contains 19 guided stages; source page 24 is intentionally deferred and the page 22 action follows the completed profile.
 - Every source assessment option and every source Other field is represented in structured TypeScript content.
 - Spiritual Gifts cannot be completed until all 18 gifts have a response.
 - Personality cannot be completed until all four pairings have a response.

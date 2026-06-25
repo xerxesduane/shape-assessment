@@ -44,7 +44,7 @@ export const tableOfContents = [
   ["Heart", "8"], ["Monitoring My Heartbeat", "9-10"], ["Abilities", "11"],
   ["Applying My Abilities", "12-13"], ["Personality", "14"], ["Plugging In My Personality", "15"],
   ["Experiences", "16"], ["Examining My Experiences", "17-20"], ["Determining My Availability", "21"],
-  ["How to Start Serving", "22"], ["5 Ways to S.T.A.R.T. to Deepen Your S.H.A.P.E.", "23"],
+  ["5 Ways to S.T.A.R.T. to Deepen Your S.H.A.P.E.", "23"],
 ] as const;
 
 export const welcomeSection: Section = {
@@ -52,9 +52,8 @@ export const welcomeSection: Section = {
   paragraphs: [
     "We are excited that you have taken the time to discover more about how God has SHAPED you for ministry. We desire that you find a place of service at Fellowship Dubai that fits the unique way God has created and designed you. Your SHAPE - Spiritual Gifts, Heart, Abilities, Personality, and Experience - influences your ministry, and our prayer is that through this journey you will discover more about how you were SHAPED for serving God.",
     "God did not design church ministry for a select few with seminary degrees. Every member of the church is a minister. This guided discovery is designed to help you understand your S.H.A.P.E. and how God may use you in ministry at Fellowship Dubai.",
-    "At the end, you can download or share your S.H.A.P.E. Profile and use it as you prayerfully explore current opportunities to serve the Lord and His people.",
+    "At the end, download your S.H.A.P.E. Profile and use it as you prayerfully explore current opportunities to serve the Lord and His people.",
     "As you begin, pray and expect God to grant you wisdom, discernment, and understanding. Remember that there are no wrong answers because this is your unique S.H.A.P.E. We are thrilled to help you find a fulfilling place to serve where you can use your gifts.",
-    "Blessings, The Fellowship Dubai Ministry Team",
   ],
 };
 
@@ -267,18 +266,6 @@ export const startWays = [
   { letter: "T", title: "Take training", text: "Explore classes and resources at Fellowship Dubai that can enhance your ministry." },
 ];
 
-export const nextStepSection: Section = {
-  id: "next-step", title: "How to Start Serving", shortTitle: "Start Serving", page: 22, eyebrow: "Congratulations - you have completed the first step in the SHAPE discovery process.",
-  scripture: { text: "Each one should use whatever gift he has received to serve others, faithfully administering God’s grace in its various forms.", reference: "1 Peter 4:10" },
-  paragraphs: [
-    "Thank you for taking the time to begin to discover how you were SHAPED for serving God. Hopefully God has revealed, clarified, or affirmed something about your SHAPE. You are a gift, and God has amazing things in store for you in ministry.",
-  ],
-};
-
-export const nextStepWays = [
-  { title: "Explore Serving Opportunities", text: "Use the Serving Opportunities form to view current roles and find an opportunity that fits your gifts, talents, and availability." },
-];
-
 export const journeySteps = [
   { id: "welcome", title: "Welcome", pages: [1] }, { id: "contents", title: "Journey Map", pages: [2] }, { id: "what-is-shape", title: "What is SHAPE?", pages: [3] },
   { id: "gifts-teaching", title: "Spiritual Gifts", pages: [4] }, { id: "gifts-assessment", title: "Unwrapping My Gifts", pages: [5,6,7] },
@@ -287,6 +274,6 @@ export const journeySteps = [
   { id: "personality-teaching", title: "Personality", pages: [14] }, { id: "personality-assessment", title: "Plugging In My Personality", pages: [15] },
   { id: "experiences-teaching", title: "Experiences", pages: [16] }, { id: "experiences-personal", title: "Personal Experiences", pages: [17] },
   { id: "experiences-work", title: "Work Experiences", pages: [17,18,19] }, { id: "experiences-ministry", title: "Ministry Experiences", pages: [19,20] },
-  { id: "availability", title: "Availability", pages: [21] }, { id: "next-step", title: "How to Start Serving", pages: [22] }, { id: "start", title: "S.T.A.R.T.", pages: [23] },
+  { id: "availability", title: "Availability", pages: [21] }, { id: "start", title: "S.T.A.R.T.", pages: [23] },
   { id: "profile", title: "My SHAPE Profile", pages: [] },
 ] as const;

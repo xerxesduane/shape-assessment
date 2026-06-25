@@ -10,7 +10,7 @@ The journey preserves the source order and includes:
 - all 30 named Abilities plus nested language, hobby, and technical lists
 - all four forced-choice Personality pairings
 - all five Experience categories, including complete nested work and ministry lists
-- Availability reflection, a focused Serving Opportunities step, and S.T.A.R.T.
+- Availability reflection, S.T.A.R.T., and a post-profile Ministry–Gift Table leading to current serving opportunities
 - private save/resume through `localStorage`
 - a complete shareable profile with copy, email/share, print/PDF, and Serving Opportunities actions
 

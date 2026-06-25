@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, Compass, LockKeyhole, RotateCcw } from "lucide-react";
 import {
   abilities, abilitiesSection, availabilitySection, experienceQuestions, experiencesSection,
-  heartQuestions, heartSection, journeySteps, nextStepSection, nextStepWays, personalitySection, startWays,
+  heartQuestions, heartSection, journeySteps, personalitySection, startWays,
   spiritualGiftsSection, tableOfContents, welcomeSection, whatIsShapeSection, workExperiences,
 } from "@/data/shapeContent";
 import { emptyShapeAnswers, type ShapeAnswers } from "@/lib/shapeProfile";
@@ -82,7 +82,6 @@ export function ShapeAssessment() {
           {current.id === "experiences-work" && <div className="field-stack"><MultiSelectField label={experienceQuestions[3].prompt} help="Select all the work areas that apply. Expand each category to choose its complete source sub-list. Source pages 17-19." options={workExperiences} selected={selected("work-experiences")} onChange={(values) => updateSelections("work-experiences", values)} otherLabel="Other work experience" otherValue={answers.text["work-experiences-other"]} onOtherChange={(value) => updateText("work-experiences-other", value)} searchable /><OtherInputs fields={WORK_OTHER_GROUPS.map((id) => [`work-other-${id}`, `Other ${workExperiences.find((item) => item.id === id)?.label || "work"} experience`])} answers={answers} updateText={updateText} /></div>}
           {current.id === "experiences-ministry" && <div className="field-stack">{experienceQuestions.slice(4).map((question) => <MultiSelectField key={question.id} label={question.prompt} help={`Circle 1 to 3 of your ministry experiences. Source pages ${Array.isArray(question.page) ? question.page.join("-") : question.page}.`} options={question.options} selected={selected(question.id)} onChange={(values) => updateSelections(question.id, values)} otherLabel={question.otherLabel} otherValue={answers.text[`${question.id}-other`]} onOtherChange={(value) => updateText(`${question.id}-other`, value)} maxSelections={question.maxSelections} searchable />)}</div>}
           {current.id === "availability" && <Availability answers={answers} updateText={updateText} selected={selected} updateSelections={updateSelections} />}
-          {current.id === "next-step" && <NextStep />}
           {current.id === "start" && <StartWays />}
           {current.id === "profile" && <ShapeProfile answers={answers} onRestart={restart} />}
         </section>
@@ -95,7 +94,7 @@ export function ShapeAssessment() {
 }
 
 function Welcome({ answers, setAnswers }: { answers: ShapeAnswers; setAnswers: React.Dispatch<React.SetStateAction<ShapeAnswers>> }) {
-  return <div className="welcome-layout"><div className="welcome-brand"><div className="shape-orbit" role="img" aria-label="S.H.A.P.E.: Spiritual Gifts, Heart, Abilities, Personality, and Experiences"><Compass size={42} aria-hidden="true" /><span aria-hidden="true">S</span><span aria-hidden="true">H</span><span aria-hidden="true">A</span><span aria-hidden="true">P</span><span aria-hidden="true">E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus.<br />Grow to be like Jesus.<br />Go tell the nations.</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details will appear on your completed profile if you choose to download or share it.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
+  return <div className="welcome-layout"><div className="welcome-brand"><div className="shape-orbit" role="img" aria-label="S.H.A.P.E.: Spiritual Gifts, Heart, Abilities, Personality, and Experiences"><Compass size={42} aria-hidden="true" /><span aria-hidden="true">S</span><span aria-hidden="true">H</span><span aria-hidden="true">A</span><span aria-hidden="true">P</span><span aria-hidden="true">E</span></div><p>FELLOWSHIP DUBAI</p><h2>Know Jesus<br />Grow to be like Jesus<br />Go tell the nations about Jesus</h2></div><div><TeachingCard section={welcomeSection} /><fieldset className="profile-fields"><legend>Your profile details</legend><p>These optional details will appear on your completed profile if you choose to download or share it.</p><label><span>Name</span><input value={answers.profile.name} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, name: event.target.value } }))} autoComplete="name" /></label><label><span>Email</span><input type="email" value={answers.profile.email} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, email: event.target.value } }))} autoComplete="email" /></label><label><span>Phone</span><input type="tel" value={answers.profile.phone} onChange={(event) => setAnswers((value) => ({ ...value, profile: { ...value.profile, phone: event.target.value } }))} autoComplete="tel" /></label></fieldset></div></div>;
 }
 
 function Contents() {
@@ -113,8 +112,4 @@ function Availability({ answers, updateText, selected, updateSelections }: { ans
 
 function StartWays() {
   return <article className="start-card"><p className="eyebrow">Source page 23</p><h1>5 Ways to S.T.A.R.T. to Deepen Your S.H.A.P.E.</h1><div>{startWays.map((way) => <section key={`${way.letter}-${way.title}`}><span>{way.letter}</span><div><h2>{way.title}</h2><p>{way.text}</p>{way.bullets && <ul>{way.bullets.map((book) => <li key={book}>{book}</li>)}</ul>}</div></section>)}</div><a href="https://fellowshipdubai.com/" target="_blank" rel="noreferrer">Visit fellowshipdubai.com for next steps and resources.</a></article>;
-}
-
-function NextStep() {
-  return <div className="field-stack"><TeachingCard section={nextStepSection} /><article className="next-step-ways"><p className="eyebrow">Your next step</p><div>{nextStepWays.map((item, index) => <section key={item.title}><span>{index + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div></section>)}</div><a href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">View Serving Opportunities</a></article></div>;
 }

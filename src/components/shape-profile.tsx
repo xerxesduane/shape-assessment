@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Clipboard, ExternalLink, Mail, Printer, RotateCcw } from "lucide-react";
 import { buildProfile, profileToText, type ShapeAnswers } from "@/lib/shapeProfile";
+import { MinistryGiftTable } from "@/components/ministry-gift-table";
 
 export function ShapeProfile({ answers, onRestart }: { answers: ShapeAnswers; onRestart: () => void }) {
   const profile = useMemo(() => buildProfile(answers), [answers]);
@@ -35,7 +36,7 @@ export function ShapeProfile({ answers, onRestart }: { answers: ShapeAnswers; on
       <ProfileSection letter="+" title="Availability">
         <dl className="availability-summary"><div><dt>Are you making service a priority?</dt><dd>{profile.availability.priority}</dd></div><div><dt>Current season and time</dt><dd>{profile.availability.season}</dd></div><div><dt>Time per week</dt><dd>{profile.availability.hours}</dd></div><div><dt>Best times</dt><dd>{profile.availability.timing.join(", ") || "Not specified"}</dd></div></dl>
       </ProfileSection>
-      <article className="recommended-step"><p className="eyebrow">Recommended next step</p><h2>Take a practical next step.</h2><p>{profile.recommendedNextStep}</p><a className="recommended-step-link no-print" href="https://fellowshipdubai.churchcenter.com/people/forms/268058" target="_blank" rel="noopener noreferrer">View Serving Opportunities <ExternalLink size={17} /></a><p className="purpose-line">Know Jesus · Grow to be like Jesus · Go tell the nations about Jesus</p></article>
+      <MinistryGiftTable />
       <div className="profile-footer no-print"><button className="back-button" onClick={onRestart}><RotateCcw size={17} />Start a new profile</button></div>
     </section>
   );
